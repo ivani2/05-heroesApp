@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-heroe',
@@ -8,9 +9,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroeComponent implements OnInit {
 
-  constructor() { }
+  heroeId!: string;
+  constructor( private activatedRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
+   
+
+  // console.log(this.activatedRoute.params);
+  //   this.activatedRoute.params.subscribe(
+  //   {
+  //     next: (id) => {
+  //       tap(console.log);
+  //     }
+  //   }
+  //  );
+  // this.activatedRoute.params
+  //     .pipe( 
+  //       tap( console.log )
+  //     ) 
+  //     .subscribe( id => this.heroeId = id );
+  this.activatedRoute.params
+  .subscribe( ({ id }) => {
+    this.heroeId = id;
+    console.log(this.heroeId);
+  } );
+
+
   }
 
 }
