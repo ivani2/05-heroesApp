@@ -3,32 +3,21 @@
 <br>
 
 
-<div fxLayout="row wrap">
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px"
+    >
 
-    <div fxFlex="20">
-        <mat-card *ngFor="let heroe of heroes">
+    <div fxFlex="20"
+    fxFlex.lg="15"
+    fxFlex.sm="30"
+    fxFlex.xs="50"
+    *ngFor="let heroe of heroes"
+    >
 
-            <mat-card-header>
-                <mat-card-title>{{ heroe.superhero }}</mat-card-title>
-                <mat-card-subtitle> {{ heroe.alter_ego }} </mat-card-subtitle>
-              </mat-card-header>
-              <img 
-              mat-card-image src="assets/heroes/{{ heroe.id }}.jpg" 
-              alt="Photo of {{ heroe.superhero }}">
-              <mat-card-content>
-                <h3> {{ heroe.publisher }} </h3>
-                <p>
-                    <strong>Primera aparición: </strong> {{ heroe.first_appearance }}
-                    <br>
-                    <strong>Personajes: </strong> {{ heroe.characters }}
-                </p>
-              </mat-card-content>
-              <mat-card-actions>
-                <button color="warn" mat-button>Leer más...</button>
-                <button color="primary" mat-button>Editar</button>
-              </mat-card-actions>
-        
-        </mat-card>
+    <app-heroe-tarjeta [heroe]="heroe"></app-heroe-tarjeta>
+
     </div>
 
 </div>
