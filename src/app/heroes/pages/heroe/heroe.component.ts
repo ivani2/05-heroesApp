@@ -1,16 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs';
+
+import { Heroe } from '../../interfaces/heroes.interface';
+
+import { HeroesService } from '../../services/heroes.service';
 
 @Component({
   selector: 'app-heroe',
   templateUrl: './heroe.component.html',
   styles: [
+    `
+    img{
+      width: 100%;
+      border-radius: 10px;
+    }
+    `
   ]
 })
 export class HeroeComponent implements OnInit {
 
   heroeId!: string;
-  constructor( private activatedRoute: ActivatedRoute ) { }
+  heroe! : Heroe;
+  constructor( private activatedRoute: ActivatedRoute,
+               private heroesService: HeroesService,
+               private router: Router          
+    ) { }
 
   ngOnInit(): void {
    
@@ -28,13 +43,31 @@ export class HeroeComponent implements OnInit {
   //       tap( console.log )
   //     ) 
   //     .subscribe( id => this.heroeId = id );
+
+
+  // this.activatedRoute.params
+  // .subscribe( ({ id }) => {
+  //   this.heroeId = id;
+  //   console.log(this.heroeId);
+  // } );
+
   this.activatedRoute.params
   .subscribe( ({ id }) => {
     this.heroeId = id;
     console.log(this.heroeId);
   } );
 
+  this.activatedRoute.params
+      .pipe( 
+        switchMap ( ({ id })  => this.heroesService.getHeroePorId( id ) ),
+      ) 
+      .subscribe( heroe => this.heroe = heroe );
 
+
+  }
+
+  regresar (): void{
+    this.router.navigate(['/heroes/listado']);
   }
 
 }
