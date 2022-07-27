@@ -20,5 +20,10 @@ export class HeroesService {
     return this.httpClient.get<Heroe>( `${ this.baseUrl }/heroes/${ id }` );
   }
 
+  getSugerencias( terminoBusqueda: string, limiteResultado: string = "6" ): Observable<Heroe[]>{
+    //http://localhost:3000/heroes?q=a&_limit=6
+    return this.httpClient.get<Heroe[]>( `${ this.baseUrl }/heroes?q=${ terminoBusqueda }&_limit=${ limiteResultado }`);
+
+  }
 
 }
