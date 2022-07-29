@@ -26,4 +26,11 @@ export class HeroesService {
 
   }
 
+  agregarHeroe( heroe: Heroe ): Observable<Heroe> {
+    return this.httpClient.post<Heroe>( `${ this.baseUrl }/heroes`, heroe );
+  }
+
+  actualizarHeroe( heroe: Heroe ): Observable<Heroe> {
+    return this.httpClient.put<Heroe>( `${ this.baseUrl }/heroes/${ heroe.id }`, heroe );
+  }
 }
