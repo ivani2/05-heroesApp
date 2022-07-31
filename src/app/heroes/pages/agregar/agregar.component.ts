@@ -17,7 +17,7 @@ import { HeroesService } from '../../services/heroes.service';
       border-radius: 10px;
       max-width: 500px;
     }
-    
+
     `
   ]
 })
@@ -87,6 +87,15 @@ export class AgregarComponent implements OnInit {
 
     }
     
+  }
+
+  borrarHeroe(): void{
+    
+    this.heroesService.borrarHeroe( this.heroe.id! )
+    .subscribe( resp => {
+      this.router.navigate(['/heroes']);
+    });
+
   }
 
 }

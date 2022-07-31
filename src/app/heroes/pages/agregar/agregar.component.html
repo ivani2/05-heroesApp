@@ -75,14 +75,30 @@ fxLayoutGap="40px">
         </mat-form-field>
         <mat-divider></mat-divider>
 
-        <button 
-        mat-raised-button
-        (click)="guardar()"
-        color="primary"
-        >
-            <mat-icon>save</mat-icon>
-            Guardar
-        </button>
+        
+
+        <div fxLayout>
+            <button 
+            mat-raised-button
+            (click)="guardar()"
+            color="primary"
+            >
+                <mat-icon>save</mat-icon>
+                Guardar
+            </button>
+
+            <span class="spacer"></span>
+
+            <button 
+            *ngIf="heroe.id"
+            mat-raised-button
+            (click)="borrarHeroe()"
+            color="warn"
+            >
+                <mat-icon>delete</mat-icon>
+                Borrar
+            </button>
+        </div>
 
     </div>
 
