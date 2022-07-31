@@ -12,11 +12,17 @@
      fxLayoutGap="30px"
     >
 
-    <div fxFlex="50">
+    <div 
+    fxFlex="50"
+    fxLayout="column"
+    class="imagenIndividualContenedor"
+    >
         <h1> {{ heroe.superhero }} <small>- {{ heroe.alter_ego }} </small> </h1>
         <mat-divider></mat-divider>
         <br>
-        <img [src]="heroe | imagen"> 
+        <img
+        [src]="heroe | imagen"
+        > 
     </div>
 
     <div fxFlex="50">

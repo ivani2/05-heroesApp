@@ -13,7 +13,18 @@ import { HeroesService } from '../../services/heroes.service';
     `
     img{
       width: 100%;
+      height: auto;
       border-radius: 10px;
+      max-width: 500px;
+    }
+    .imagenIndividualContenedor{
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      place-content: stretch center;
+      align-items: center;
+      flex: 1 1 100%;
+      max-width: 50%;
     }
     `
   ]
