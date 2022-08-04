@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,9 +14,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router ) { }
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    //ir al backend
+    /* Confirmar que el usuario existe */
+    /*Navegar a la pantalla de heroes */
+
+    this.router.navigate(['./auth/login']);
   }
 
 }
