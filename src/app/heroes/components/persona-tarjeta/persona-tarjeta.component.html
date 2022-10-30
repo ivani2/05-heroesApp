@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ persona.id }}</mat-card-title>
+        <mat-card-subtitle> {{ persona.name }} </mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <h3> {{ persona.name }} </h3>
+        <p>
+            <strong>Apellido </strong> {{ persona.lastName }}
+            <br>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+        color="warn"
+        mat-button
+        >Leer más...</button>
+      </mat-card-actions>
+</mat-card>

@@ -1,0 +1,25 @@
+<h1> Listado de Personas </h1>
+<mat-divider></mat-divider>
+<br>
+
+
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px"
+    >
+
+    <div fxFlex="20"
+    fxFlex.lg="15"
+    fxFlex.sm="30"
+    fxFlex.xs="50"
+    *ngFor="let persona of personas"
+    >
+
+    <app-persona-tarjeta [persona]="persona"></app-persona-tarjeta>
+
+    </div>
+
+</div>
+
+
