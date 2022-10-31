@@ -16,6 +16,7 @@ import { ImagenPipe } from './pipes/imagen.pipe';
 import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 import { PersonaTarjetaComponent } from './components/persona-tarjeta/persona-tarjeta.component';
 import { ListadoPersonasComponent } from './pages/listado-personas/listado-personas.component';
+import { AgregarPersonaComponent } from './pages/agregar-persona/agregar-persona.component';
 
 
 
@@ -31,7 +32,8 @@ import { ListadoPersonasComponent } from './pages/listado-personas/listado-perso
     ImagenPipe,
     ConfirmarComponent,
     PersonaTarjetaComponent,
-    ListadoPersonasComponent
+    ListadoPersonasComponent,
+    AgregarPersonaComponent
   ],
   imports: [
     CommonModule,

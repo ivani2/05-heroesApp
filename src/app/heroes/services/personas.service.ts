@@ -19,4 +19,22 @@ export class PersonaService {
     return this.httpclient.get<Persona[]>( ` ${this.baseUrl}/personas ` );
   }
 
+  agregarPersona( persona: Persona ): Observable<Persona>{
+    return this.httpclient.post<Persona>( ` ${this.baseUrl}/personas `, persona );
+  }
+
+  actualizarPersona( persona: Persona, id: Number ): Observable<Persona>{
+    return this.httpclient.post<Persona>( ` ${this.baseUrl}/personas/${ id } `, persona );
+  }
+
+  getPersonaPorId(id: Number): Observable<Persona>{
+    return this.httpclient.get<Persona>( ` ${this.baseUrl}/personas/${ id } ` );
+  }
+
+
+  borrarPersona( id: Number ): Observable<any> {
+    return this.httpclient.delete<any>( `${ this.baseUrl }/personas/${ id }`);
+  }
+
+
 }
